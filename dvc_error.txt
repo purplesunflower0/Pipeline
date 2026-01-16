@@ -1,0 +1,124 @@
+2026-01-16 18:27:40,283 DEBUG: v3.66.1 (pip), CPython 3.13.3 on Windows-11-10.0.26100-SP0
+2026-01-16 18:27:40,283 DEBUG: command: C:\Users\HP\AppData\Roaming\Python\Python313\Scripts\dvc exp run -v
+2026-01-16 18:27:42,058 ERROR: unexpected error - [Errno 13] Permission denied
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\cli\__init__.py", line 212, in main
+    ret = cmd.do_run()
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\cli\command.py", line 30, in do_run
+    return self.run()
+           ~~~~~~~~^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\commands\experiments\run.py", line 14, in run
+    self.repo.experiments.run(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        name=self.args.name,
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        **self._common_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\__init__.py", line 354, in run
+    return run(self.repo, *args, **kwargs)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\__init__.py", line 59, in wrapper
+    return f(repo, *args, **kwargs)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\run.py", line 78, in run
+    return repo.experiments.reproduce_one(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        targets=targets,
+        ^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\__init__.py", line 125, in reproduce_one
+    self.queue_one(exp_queue, **kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\__init__.py", line 136, in queue_one
+    return self.new(queue, **kwargs)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\__init__.py", line 218, in new
+    return queue.put(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\queue\workspace.py", line 38, in put
+    return self._stash_exp(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dvc\repo\experiments\queue\base.py", line 311, in _stash_exp
+    with self.scm.stash_workspace(reinstate_index=True) as workspace:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\scmrepo\git\__init__.py", line 479, in stash_workspace
+    rev = self.stash.push(**kwargs)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\scmrepo\git\stash.py", line 36, in push
+    rev, reset = self.scm._stash_push(
+                 ~~~~~~~~~~~~~~~~~~~~^
+        self.ref, message=message, include_untracked=include_untracked
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\scmrepo\git\__init__.py", line 308, in _backend_func
+    result = func(*args, **kwargs)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\scmrepo\git\backend\dulwich\__init__.py", line 823, in _stash_push
+    if not self.is_dirty(untracked_files=include_untracked):
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\scmrepo\git\backend\dulwich\__init__.py", line 456, in is_dirty
+    return any(self.status(**kwargs))
+               ~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\scmrepo\git\backend\dulwich\__init__.py", line 919, in status
+    staged, unstaged, untracked = git_status(
+                                  ~~~~~~~~~~^
+        self.repo, ignored=ignored, untracked_files=untracked_files
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dulwich\porcelain\__init__.py", line 3010, in status
+    unstaged_changes_tree = list(
+        get_unstaged_changes(index, r.path, filter_callback, preload_index)
+    )
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dulwich\index.py", line 3001, in get_unstaged_changes
+    result = _check_entry_for_changes(
+        tree_path, entry, root_path, filter_blob_callback
+    )
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dulwich\index.py", line 2930, in _check_entry_for_changes
+    blob = blob_from_path_and_stat(full_path, st)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dulwich\index.py", line 2101, in blob_from_path_and_stat
+    return blob_from_path_and_mode(fs_path, st.st_mode, tree_encoding)
+  File "C:\Users\HP\AppData\Roaming\Python\Python313\site-packages\dulwich\index.py", line 2086, in blob_from_path_and_mode
+    blob.data = f.read()
+                ~~~~~~^^
+PermissionError: [Errno 13] Permission denied
+
+2026-01-16 18:27:42,141 DEBUG: link type reflink is not available ([Errno 129] no more link types left to try out)
+2026-01-16 18:27:42,141 DEBUG: Removing 'C:\mlOps\.3wq70qN37ojp2f87hR99cA.tmp'
+2026-01-16 18:27:42,143 DEBUG: Removing 'C:\mlOps\.3wq70qN37ojp2f87hR99cA.tmp'
+2026-01-16 18:27:42,144 DEBUG: Removing 'C:\mlOps\.3wq70qN37ojp2f87hR99cA.tmp'
+2026-01-16 18:27:42,144 DEBUG: Removing 'C:\mlOps\Pipeline\.dvc\cache\files\md5\.Uq5Q7LuUwMIzAfR5NQ3ZzQ.tmp'
+2026-01-16 18:27:42,148 DEBUG: Version info for developers:
+DVC version: 3.66.1 (pip)
+-------------------------
+Platform: Python 3.13.3 on Windows-11-10.0.26100-SP0
+Subprojects:
+	dvc_data = 3.18.2
+	dvc_objects = 5.2.0
+	dvc_render = 1.0.2
+	dvc_task = 0.40.2
+	scmrepo = 3.6.1
+Supports:
+	http (aiohttp = 3.12.13, aiohttp-retry = 2.9.1),
+	https (aiohttp = 3.12.13, aiohttp-retry = 2.9.1)
+Config:
+	Global: C:\Users\HP\AppData\Local\iterative\dvc
+	System: C:\ProgramData\iterative\dvc
+Cache types: hardlink, symlink
+Cache directory: NTFS on C:\
+Caches: local
+Remotes: None
+Workspace directory: NTFS on C:\
+Repo: dvc, git
+Repo.site_cache_dir: C:\ProgramData\iterative\dvc\Cache\repo\cb74cc24b32bb81dbb50f60240e345a8
+
+Having any troubles? Hit us up at https://dvc.org/support, we are always happy to help!
+2026-01-16 18:27:42,150 DEBUG: Analytics is enabled.
+2026-01-16 18:27:42,430 DEBUG: Trying to spawn ['daemon', 'analytics', 'C:\\Users\\HP\\AppData\\Local\\Temp\\tmpej_52s4q', '-v']
+2026-01-16 18:27:42,440 DEBUG: Spawned ['daemon', 'analytics', 'C:\\Users\\HP\\AppData\\Local\\Temp\\tmpej_52s4q', '-v'] with pid 18824
