@@ -20,3 +20,7 @@
 2026-01-16 17:32:22,583 - data_ingestion - DEBUG - Data loaded from https://raw.githubusercontent.com/vikashishere/Datasets/main/spam.csv
 2026-01-16 17:32:22,585 - data_ingestion - DEBUG - Data preprocessing completed
 2026-01-16 17:32:22,614 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
+2026-01-16 17:54:02,226 - data_ingestion - DEBUG - Parameters retrieved from params.yaml
+2026-01-16 17:54:02,960 - data_ingestion - DEBUG - Data loaded from https://raw.githubusercontent.com/vikashishere/Datasets/main/spam.csv
+2026-01-16 17:54:02,973 - data_ingestion - DEBUG - Data preprocessing completed
+2026-01-16 17:54:03,008 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
