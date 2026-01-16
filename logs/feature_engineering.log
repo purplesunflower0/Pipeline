@@ -1,0 +1,10 @@
+2026-01-16 16:36:15,652 - feature_engineering - DEBUG - Parameters retrieved from params.yaml
+2026-01-16 16:36:15,653 - feature_engineering - ERROR - Failed to complete the feature engineering process: 'feature_engineering'
+2026-01-16 16:38:11,509 - feature_engineering - DEBUG - Parameters retrieved from params.yaml
+2026-01-16 16:38:11,509 - feature_engineering - ERROR - Failed to complete the feature engineering process: 'feature_engineering'
+2026-01-16 16:38:45,706 - feature_engineering - DEBUG - Parameters retrieved from params.yaml
+2026-01-16 16:38:45,755 - feature_engineering - DEBUG - Data loaded and NaNs filled from ./data/interim/train_processed.csv
+2026-01-16 16:38:45,788 - feature_engineering - DEBUG - Data loaded and NaNs filled from ./data/interim/test_processed.csv
+2026-01-16 16:38:45,887 - feature_engineering - DEBUG - tfidf applied and data transformed
+2026-01-16 16:38:46,060 - feature_engineering - DEBUG - Data saved to ./data\processed\train_tfidf.csv
+2026-01-16 16:38:46,111 - feature_engineering - DEBUG - Data saved to ./data\processed\test_tfidf.csv
